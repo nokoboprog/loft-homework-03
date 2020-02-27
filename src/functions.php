@@ -1,20 +1,19 @@
 <?php
 
-
 //Задание #3.1
 
 function task1($xmlFile)
 {
     $xmlToArray = json_decode(json_encode(simplexml_load_file($xmlFile)), true);
-    arrayOutput($xmlToArray);
+    orderPrint($xmlToArray);
 }
 
-function arrayOutput(array $arrayName)
+function orderPrint(array $arrayName)
 {
     foreach ($arrayName as $key => $value) {
         if (is_array($value)) {
             echo $br = is_numeric($key) ? '<br>' : '';
-            arrayOutput($value);
+            orderPrint($value);
         } else {
             if ($key == 'Type') {
                 echo "<b>$value address</b><br>";
@@ -27,7 +26,6 @@ function arrayOutput(array $arrayName)
         }
     }
 }
-
 
 //Задача #3.2
 
@@ -66,13 +64,12 @@ function arraysDifference($arr1, $arr2)
         if (is_array($value)) {
             arraysDifference($arr1[$key], $arr2[$key]);
         } else {
-            if ($value != $arr2[$key]) {
+            if ($value !== $arr2[$key]) {
                 echo "$key => $value<br>";
             }
         }
     }
 }
-
 
 //Задача #3.3
 
@@ -99,7 +96,6 @@ function task3($arrayLength)
     fclose($fp);
     echo 'Сумма чётных чисел равна: ' . array_sum($res) . '<br>';
 }
-
 
 //Задача #3.4
 

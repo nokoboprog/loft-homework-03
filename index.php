@@ -1,13 +1,11 @@
 <?php
 require_once('src/functions.php');
 
-
 //Задание #3.1
 
 echo '<b style="color: brown">Задание #3.1</b><br><br>';
 task1('data.xml');
 echo '<br><br>';
-
 
 //Задача #3.2
 
@@ -37,13 +35,11 @@ $pets = [
 task2($pets);
 echo '<br><br>';
 
-
 //Задача #3.3
 
 echo '<b style="color: brown">Задание #3.3</b><br><br>';
 task3(mt_rand(50, 100));
 echo '<br><br>';
-
 
 //Задача #3.4
 
